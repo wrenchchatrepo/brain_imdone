@@ -1,0 +1,138 @@
+keepEmptyPriority: false
+code:
+  include_lists:
+    - TODO
+    - DOING
+    - DONE
+    - PLANNING
+    - FIXME
+    - ARCHIVE
+    - HACK
+    - CHANGED
+    - XXX
+    - IDEA
+    - NOTE
+    - REVIEW
+    - BACKLOG
+    - CODIFY
+    - TECH DEBT
+lists:
+  - name: BACKLOG
+    hidden: false
+    id: 8vmt16qam7dbqq53
+  - name: PLANNING
+    hidden: false
+    id: 8vmt16qam7dbqq54
+  - name: NOTE
+    hidden: false
+    id: 8vmt16qam7dbqq55
+  - name: TODO
+    hidden: false
+    id: 8vmt16qam7dbqq56
+  - name: DOING
+    hidden: false
+    id: 8vmt16qam7dbqq57
+  - name: DONE
+    hidden: false
+    id: 8vmt16qam7dbqq58
+  - name: REVIEW
+    hidden: false
+    id: 8vmt16qam7dbqq59
+  - name: CODIFY
+    hidden: false
+    id: 8vmt16qam7dbqq5a
+  - name: TECH DEBT
+    hidden: false
+    id: 8vmt16qam7dbqq5b
+settings:
+  openIn: custom
+  openCodeIn: custom
+  journalType: Folder
+  journalPath: journal
+  appendNewCardsTo: imdone-tasks.md
+  newCardSyntax: MARKDOWN
+  replaceSpacesWith: '-'
+  plugins:
+    devMode: true
+  journalTemplate: ''
+  markdownOnly: true
+  hiddenMetadata:
+    - created
+    - order
+    - owner
+  totalBoardHeight: 0
+  boardTitle: Brain Tasks
+  defaultFilter: ''
+  maxOpenFiles: 5
+  showTagsAndMeta: false
+  showInlineComments: true
+  showBoardTitle: true
+  showCardCounts: true
+  showFilteredCardsOnly: true
+  showTotalCardCounts: true
+  showProgressBars: true
+  showDescriptionBadges: true
+  name: brain
+  filter:
+    regex:
+      pattern: >-
+        (?:<!--\s*(BACKLOG|PLANNING|NOTE|TODO|DOING|DONE|REVIEW|CODIFY|TECH
+        DEBT):\s*([^\n]*)|#(BACKLOG|PLANNING|NOTE|TODO|DOING|DONE|REVIEW|CODIFY|TECH
+        DEBT)(?::\d+)?\s+([^\n]*))
+      flags: gm
+  taskRegex:
+    pattern: >-
+      -\s*\[\s*\]\s*(?:<!--\s*(BACKLOG|PLANNING|NOTE|TODO|DOING|DONE|REVIEW|CODIFY|TECH
+      DEBT):\s*([^\n]*)|#(BACKLOG|PLANNING|NOTE|TODO|DOING|DONE|REVIEW|CODIFY|TECH
+      DEBT)(?::\d+)?\s+([^\n]*))
+    flags: gm
+  views:
+    - name: Current Tasks
+      filter: 'list:TODO list:DOING'
+      description: Shows all current tasks that need attention
+    - name: High Priority
+      filter: 'priority:high'
+      description: Shows all high priority tasks across all lists
+    - name: Due Soon
+      filter: 'due:<7d'
+      description: Shows tasks due within the next 7 days
+    - name: My Tasks
+      filter: 'owner:@dionedge'
+      description: Shows all tasks assigned to you
+    - name: Organization Tasks
+      filter: '#organization'
+      description: Shows all tasks related to organization
+  kudosProbability: 0.75
+  ignoreFrontMatterTags: false
+  journalFilePrefix: /Users/dionedge/dev/brain/
+  customOpenIn: 'cursor "${path}":${line}'
+  customOpenCodeIn: 'cursor "${path}":${line}'
+  journalFileSuffix: .md
+  cards:
+    colors:
+      - color: red
+        filter: priority = urgent
+    template: |
+      -  <!-- ${list}: ${title}
+      created::${(new Date()).toISOString()}
+      -->
+    trackChanges: true
+    metaNewLine: true
+    addCompletedMeta: true
+    addCheckBoxTasks: false
+    doingList: DOING
+    doneList: DONE
+    tokenPrefix: '<!-- '
+    taskPrefix: <!--
+    tagPrefix: '#'
+    metaSep: '::'
+    orderMeta: true
+    maxLines: 1
+    addNewCardsToTop: true
+    showTagsAndMeta: false
+    showMetadata: false
+    defaultList: BACKLOG
+    archiveCompleted: true
+    archiveFolder: archive
+    customCardTerminator: '==='
+    addStartedMeta: true

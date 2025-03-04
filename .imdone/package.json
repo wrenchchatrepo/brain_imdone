@@ -1,0 +1,21 @@
+{
+  "name": "brain-automations",
+  "version": "1.0.0",
+  "description": "Automation scripts for the brain system",
+  "main": "scripts/run_automations.js",
+  "scripts": {
+    "start": "node scripts/run_automations.js",
+    "due-dates": "node scripts/due_date_reminder.js",
+    "card-movement": "node scripts/auto_card_movement.js",
+    "recurring-tasks": "node scripts/recurring_tasks.js",
+    "kudos": "node scripts/kudos_system.js",
+    "archive": "node scripts/archive_completed_cards.js"
+  },
+  "dependencies": {
+    "glob": "^7.2.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "private": true
+} 
